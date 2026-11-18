@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111"><title>ERFAN Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="auth" class="auth-wrap">
+  <div class="auth-card">
+    <div class="brand">ERFAN<span>.</span></div><p class="muted">فضای اختصاصی تو، قوانین تو.</p>
+    <div class="tabs"><button class="tab active" data-auth="login">ورود</button><button class="tab" data-auth="register">ثبت‌نام</button></div>
+    <form id="authForm"><label>نام کاربری</label><input name="username" required minlength="3" autocomplete="username" placeholder="مثلاً erfan_01">
+      <label id="displayLabel" class="hidden">نام نمایشی</label><input id="displayName" name="display_name" class="hidden" placeholder="نامی که دیگران می‌بینند">
+      <label>رمز عبور</label><input name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="حداقل ۸ کاراکتر">
+      <button class="primary full" type="submit">ادامه</button><p id="authMsg" class="notice"></p>
+    </form>
+  </div>
+</div>
+<div id="app" class="hidden">
+<header class="topbar"><button class="brand brand-btn" data-page="feed">ERFAN<span>.</span></button><div class="top-actions"><input id="globalSearch" class="search" placeholder="جست‌وجوی کاربران..."><button class="avatar-mini" id="meAvatar">E</button></div></header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="side-user"><div class="avatar" id="sideAvatar">E</div><div><b id="sideName">کاربر</b><small id="sideHandle">@user</small></div></div>
+  <button class="nav active" data-page="feed">⌂ <span>خانه و تایم‌لاین</span></button>
+  <button class="nav" data-page="messages">✉ <span>پیام‌رسان</span></button>
+  <button class="nav" data-page="communities">◈ <span>گروه‌ها و کانال‌ها</span></button>
+  <button class="nav" data-page="profile">◎ <span>پروفایل من</span></button>
+  <button class="nav hidden" id="adminNav" data-page="admin">⚙ <span>پنل مدیریت</span></button>
+  <button class="nav logout" id="logout">↪ <span>خروج از حساب</span></button>
+  <div class="side-foot">ERFAN SITE <span>•</span> 2026</div>
+</aside>
+<main id="main"></main>
+<aside class="rightbar"><div class="panel"><h3>درباره ERFAN Site</h3><p class="muted">یک فضای اجتماعی مستقل برای ارتباط، اشتراک‌گذاری و ساختن جامعه.</p></div><div class="panel"><h3>راهنما</h3><p class="muted">برای شروع، پست بگذار یا از بخش جست‌وجو دوستانت را پیدا کن.</p></div></aside>
+</div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
